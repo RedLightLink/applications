@@ -42,7 +42,7 @@ public class BooksController {
         }
     }
 
-    @GetMapping("/biblioteca/del/{id}")
+    @DeleteMapping("/biblioteca/del/{id}")
     public @ResponseBody ResponseEntity<Iterable<Integer>> dellByID(@PathVariable Integer id){
         booksRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
